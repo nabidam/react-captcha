@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useRef, useState } from "react";
+import "./App.css";
+import { Captcha } from "./lib";
 
 function App() {
+  const [captcha, setCaptcha] = useState("");
+  const [captchaInput, setCaptchaInput] = useState("");
+  const [res, setRes] = useState("");
+  const captchaRef = useRef();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (captcha === captchaInput) {
+      setRes("OK");
+    } else {
+      captchaRef.current.initializeCaptcha();
+      setRes("fail");
+    }
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Captcha setWord={setCaptcha} ref={captchaRef} persianChars={true} />
+      <form action="" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={captchaInput}
+          onChange={(e) => setCaptchaInput(e.target.value)}
+        />
+        <input type="submit" />
+      </form>
+
+      <div>{res}</div>
     </div>
   );
 }
