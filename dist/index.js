@@ -9,15 +9,7 @@ Object.defineProperty(exports, "Captcha", {
     return _Captcha.default;
   }
 });
-Object.defineProperty(exports, "loadCaptchaEnginge", {
-  enumerable: true,
-  get: function get() {
-    return _loadCaptchaEnginge.default;
-  }
-});
 
 var _Captcha = _interopRequireDefault(require("./components/Captcha"));
-
-var _loadCaptchaEnginge = _interopRequireDefault(require("./helpers/loadCaptchaEnginge"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
