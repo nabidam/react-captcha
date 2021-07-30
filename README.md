@@ -2,6 +2,8 @@
 
 It's a react component that you can use it to generate captcha very easy.
 
+Demo: [nabidam-react-captcha.netlify.app](https://nabidam-react-captcha.netlify.app/)
+
 ## Installation
 
 ```bash
