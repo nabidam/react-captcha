@@ -1,5 +1,6 @@
 import { useEffect, useRef, forwardRef, useImperativeHandle } from "react";
 
+/* eslint-disable jsx-a11y/anchor-is-valid */
 const Captcha = forwardRef(
   (
     {

@@ -13,7 +13,6 @@ require("core-js/modules/es.string.split.js");
 
 var _react = require("react");
 
-/* eslint-disable jsx-a11y/anchor-is-valid */
 const Captcha = /*#__PURE__*/(0, _react.forwardRef)((_ref, ref) => {
   let {
     word,
@@ -71,7 +70,7 @@ const Captcha = /*#__PURE__*/(0, _react.forwardRef)((_ref, ref) => {
   }));
   (0, _react.useEffect)(() => {
     initializeCaptcha();
-  }, []);
+  });
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("canvas", {
     ref: canvas,
     width: 100,
